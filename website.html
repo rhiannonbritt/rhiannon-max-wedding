@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhiannon & Max — Wedding Weekend</title>
+<style>
+  @font-face {
+    font-family: 'KELTN';
+    src: url('KELTN.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'BilboBold';
+    src: url('bilbobold.ttf') format('truetype');
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'KELTN', serif;
+    background: #fff;
+    color: #2a2a2a;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 52px 20px 0;
+    text-align: center;
+  }
+
+  .mountain-icon {
+    width: 110px;
+    opacity: 0.85;
+    margin-bottom: 32px;
+  }
+
+  .mountain-hero {
+    width: min(650px, 80vw);
+    opacity: 0.82;
+    margin-bottom: 36px;
+  }
+
+  .header-names {
+    font-family: 'BilboBold', serif;
+    font-size: clamp(4.2rem, 14vw, 6.0rem);
+    font-weight: normal;
+    color: #2a2a2a;
+    margin-bottom: 14px;
+  }
+
+  .event-title {
+    font-family: 'BilboBold', serif;
+    font-size: clamp(3.4rem, 11vw, 4.6rem);
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+  }
+
+  .header-meta {
+    font-family: 'KELTN', serif;
+    font-size: 2.1rem;
+    text-transform: lowercase;
+    color: #555;
+    line-height: 2;
+    letter-spacing: 0.05em;
+  }
+
+  .intro-text {
+    font-family: 'KELTN', serif;
+    font-size: 2.0rem;
+    text-transform: lowercase;
+    color: #555;
+    line-height: 2.2;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .divider {
+    width: 1px;
+    height: 48px;
+    background: #ccc;
+    margin: 36px auto;
+  }
+
+  /* ── Main ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* ── Option C icon divider ── */
+  .icon-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0 52px;
+  }
+  .icon-divider .line {
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+  }
+  .icon-divider img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    opacity: 0.75;
+    flex-shrink: 0;
+  }
+
+  /* ── Event card ── */
+  .event-card {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .event-day {
+    font-family: 'KELTN', serif;
+    font-size: 2.0rem;
+    text-transform: lowercase;
+    color: #888;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .event-detail {
+    font-family: 'KELTN', serif;
+    font-size: 2.0rem;
+    text-transform: lowercase;
+    color: #777;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
+  }
+
+  .event-detail a,
+  .event-description a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s;
+  }
+
+  .event-detail a:hover,
+  .event-description a:hover {
+    opacity: 0.6;
+  }
+
+  .event-description {
+    font-family: 'KELTN', serif;
+    font-size: 1.8rem;
+    text-transform: lowercase;
+    color: #666;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    max-width: 750px;
+    margin: 20px auto 0;
+    text-align: center;
+  }
+
+  /* ── RSVP area ── */
+  .rsvp-area {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .rsvp-label {
+    font-family: 'KELTN', serif;
+    font-size: 1.9rem;
+    text-transform: lowercase;
+    color: #999;
+    letter-spacing: 0.05em;
+  }
+
+  .rsvp-row {
+    display: flex;
+    gap: 0;
+    width: min(480px, 100%);
+    border: 1.5px solid #2a2a2a;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+
+  .rsvp-row input {
+    flex: 1;
+    padding: 13px 20px;
+    border: none;
+    outline: none;
+    font-family: 'KELTN', serif;
+    font-size: 2.0rem;
+    background: #fff;
+    color: #2a2a2a;
+    min-width: 0;
+    text-transform: lowercase;
+  }
+
+  .rsvp-row input::placeholder { color: #bbb; }
+
+  .rsvp-row button {
+    padding: 13px 22px;
+    background: #2a2a2a;
+    color: #fff;
+    border: none;
+    font-family: 'KELTN', serif;
+    font-size: 1.9rem;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .rsvp-row button:hover { background: #111; }
+  .rsvp-row button:disabled { background: #888; cursor: default; }
+
+  .rsvp-feedback {
+    font-family: 'KELTN', serif;
+    font-size: 1.9rem;
+    text-transform: lowercase;
+    min-height: 1em;
+    color: #555;
+    letter-spacing: 0.05em;
+  }
+
+  .rsvp-feedback.success { color: #4a7a4a; }
+  .rsvp-feedback.error   { color: #9a3a3a; }
+
+  .attendees {
+    font-family: 'KELTN', serif;
+    font-size: 1.85rem;
+    text-transform: lowercase;
+    color: #aaa;
+    text-align: center;
+    line-height: 2;
+  }
+
+  footer {
+    text-align: center;
+    padding: 0 20px 48px;
+    font-family: 'KELTN', serif;
+    font-size: 1.85rem;
+    text-transform: lowercase;
+    color: #ccc;
+    letter-spacing: 0.1em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="mountains.png" alt="mountains" style="width: min(340px, 80vw); opacity: 0.85; margin-bottom: 36px;">
+
+  <div class="header-names">rhiannon &amp; max</div>
+  <div class="header-meta">
+    Sunday, May 24, 2026<br>
+    Torver, the Lake District
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="intro-text">
+    We can't wait to celebrate with you all in such a special place to us.
+    Below you'll find our weekend schedule — please let us know which events you'll be joining.
+  </p>
+</header>
+
+<main>
+
+  <!-- Divider: champagne flutes -->
+  <div class="icon-divider">
+    <div class="line"></div>
+    <img src="flutes.png" alt="">
+    <div class="line"></div>
+  </div>
+
+  <!-- Event 1: Welcome Drinks -->
+  <div class="event-card">
+    <div class="event-day">Friday, 22nd May</div>
+    <div class="event-title">welcome drinks</div>
+    <div class="event-detail">
+      <a href="https://maps.app.goo.gl/UTcjLDi8H7NAy3BEA" target="_blank">Sunny Bank Chapel</a><br>
+      7:30 pm onwards
+    </div>
+    <p class="event-description">
+      We're so grateful to everyone travelling to join our celebrations.
+      <br><br>
+      For those arriving Friday evening we'll do a welcome drinks at <a href="https://maps.app.goo.gl/UTcjLDi8H7NAy3BEA" target="_blank">Sunny Bank Chapel</a>.
+      <br><br>
+      Please join us to kick off the celebrations.
+    </p>
+    <div class="rsvp-area">
+      <div class="rsvp-label">will you join us?</div>
+      <div class="rsvp-row">
+        <input type="text" id="name-friday" placeholder="your name" autocomplete="name">
+        <button onclick="rsvp('friday', 'Welcome Drinks', this)">rsvp</button>
+      </div>
+      <div class="rsvp-feedback" id="feedback-friday"></div>
+      <div class="attendees" id="attendees-friday"></div>
+    </div>
+  </div>
+
+  <!-- Divider: mountains -->
+  <div class="icon-divider">
+    <div class="line"></div>
+    <img src="mountains.png" alt="">
+    <div class="line"></div>
+  </div>
+
+  <!-- Event 2: Walk -->
+  <div class="event-card">
+    <div class="event-day">Saturday, 23rd May</div>
+    <div class="event-title">walk up old man coniston</div>
+    <div class="event-detail">
+      <a href="https://maps.app.goo.gl/3jbnWQHZJnUNgTrAA" target="_blank">Coniston Old Man Trailhead</a><br>
+      10:30 AM start
+    </div>
+    <div class="event-description">
+      Join us for a morning hike up the Old Man of Coniston. The walk is about 6.5km with 600m in elevation, which will take about 5 hours at a relaxed pace. The trail is suitable for all ages and abilities if you're comfortable walking for that long.
+      <br><br>
+      Bring a packed lunch.
+    </div>
+    <div class="rsvp-area">
+      <div class="rsvp-label">will you join us?</div>
+      <div class="rsvp-row">
+        <input type="text" id="name-saturday" placeholder="your name" autocomplete="name">
+        <button onclick="rsvp('saturday', 'Walk Up Old Man Coniston', this)">rsvp</button>
+      </div>
+      <div class="rsvp-feedback" id="feedback-saturday"></div>
+      <div class="attendees" id="attendees-saturday"></div>
+    </div>
+  </div>
+
+  <!-- Divider: rings -->
+  <div class="icon-divider">
+    <div class="line"></div>
+    <img src="rings.png" alt="">
+    <div class="line"></div>
+  </div>
+
+  <!-- Event 3: The Wedding -->
+  <div class="event-card">
+    <div class="event-day">Sunday, 24th May</div>
+    <div class="event-title">the wedding</div>
+    <div class="event-detail">
+      <a href="https://maps.app.goo.gl/9LGsaCfTPvXfa5Ys8" target="_blank">St Luke's Church, Torver</a><br>
+      11:00 AM<br>
+      Reception at
+      <a href="https://maps.app.goo.gl/mtsUropsetMPeihz6" target="_blank">Sunny Bank Farm field</a>
+    </div>
+    <div class="rsvp-area">
+      <div class="rsvp-label">if you're seeing this, then we know you're coming</div>
+    </div>
+  </div>
+
+  <!-- Divider: coffee -->
+  <div class="icon-divider">
+    <div class="line"></div>
+    <img src="coffee.png" alt="">
+    <div class="line"></div>
+  </div>
+
+  <!-- Event 4: Morning After Brunch -->
+  <div class="event-card">
+    <div class="event-day">Monday, 25th May</div>
+    <div class="event-title">morning after brunch</div>
+    <div class="event-detail">
+      <a href="https://maps.app.goo.gl/cFeYsVjTdiQeuau66" target="_blank">Sunny Bank Farm Garden</a><br>
+      11:00 AM
+    </div>
+    <div class="event-description">
+      Come back to the farm for a light brunch so we can ride out the hangovers together.
+    </div>
+    <div class="rsvp-area">
+      <div class="rsvp-label">will you join us?</div>
+      <div class="rsvp-row">
+        <input type="text" id="name-brunch" placeholder="your name" autocomplete="name">
+        <button onclick="rsvp('brunch', 'Morning After Brunch', this)">rsvp</button>
+      </div>
+      <div class="rsvp-feedback" id="feedback-brunch"></div>
+      <div class="attendees" id="attendees-brunch"></div>
+    </div>
+  </div>
+
+  <!-- Divider: canoe -->
+  <div class="icon-divider">
+    <div class="line"></div>
+    <img src="canoe.png" alt="">
+    <div class="line"></div>
+  </div>
+
+  <!-- Event 5: Canoe Adventure -->
+  <div class="event-card">
+    <div class="event-day">Monday, 25th May</div>
+    <div class="event-title">canoe adventure</div>
+    <div class="event-detail">
+      <a href="https://maps.app.goo.gl/cFeYsVjTdiQeuau66" target="_blank">Coniston Water</a><br>
+      3:00 PM
+    </div>
+    <div class="event-description">
+      The best cure for a hangover is an afternoon on the lake. Join us for a canoe adventure to Peel Island. We will provide the canoes.
+    </div>
+    <div class="rsvp-area">
+      <div class="rsvp-label">will you join us?</div>
+      <div class="rsvp-row">
+        <input type="text" id="name-canoe" placeholder="your name" autocomplete="name">
+        <button onclick="rsvp('canoe', 'Canoe Adventure', this)">rsvp</button>
+      </div>
+      <div class="rsvp-feedback" id="feedback-canoe"></div>
+      <div class="attendees" id="attendees-canoe"></div>
+    </div>
+  </div>
+
+  <!-- Divider: bonfire -->
+  <div class="icon-divider">
+    <div class="line"></div>
+    <img src="bonfire.png" alt="">
+    <div class="line"></div>
+  </div>
+
+  <!-- Event 6: Bonfire on the Lake -->
+  <div class="event-card">
+    <div class="event-day">Monday, 25th May</div>
+    <div class="event-title">bonfire on the lake</div>
+    <div class="event-detail">
+      <a href="https://maps.app.goo.gl/cFeYsVjTdiQeuau66" target="_blank">Coniston Water</a><br>
+      7:00 PM
+    </div>
+    <div class="event-description">
+      To finish off the weekend, join us for a bonfire and BYO BBQ on the lake shore.
+    </div>
+    <div class="rsvp-area">
+      <div class="rsvp-label">will you join us?</div>
+      <div class="rsvp-row">
+        <input type="text" id="name-bonfire" placeholder="your name" autocomplete="name">
+        <button onclick="rsvp('bonfire', 'Bonfire On The Lake', this)">rsvp</button>
+      </div>
+      <div class="rsvp-feedback" id="feedback-bonfire"></div>
+      <div class="attendees" id="attendees-bonfire"></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>Rhiannon &amp; Max · May 2026 · Torver, the Lake District</footer>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxn7ex4HuuR1Ki28137ss_SoSSft3LIWfyMPF0H1ktR5XB0_UFtQtXtJZHYgD088Xmu/exec';
+  const localRSVPs = { friday: [], saturday: [], brunch: [], canoe: [], bonfire: [] };
+
+  function rsvp(eventKey, eventName, btn) {
+    const input = document.getElementById('name-' + eventKey);
+    const feedback = document.getElementById('feedback-' + eventKey);
+    const name = input.value.trim();
+
+    if (!name) {
+      feedback.textContent = 'please enter your name.';
+      feedback.className = 'rsvp-feedback error';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '...';
+    feedback.textContent = '';
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: eventName, name })
+    })
+    .then(() => confirmRSVP(eventKey, name, btn, feedback))
+    .catch(() => {
+      feedback.textContent = 'something went wrong — please try again.';
+      feedback.className = 'rsvp-feedback error';
+      btn.disabled = false;
+      btn.textContent = 'rsvp';
+    });
+  }
+
+  function confirmRSVP(eventKey, name, btn, feedback) {
+    localRSVPs[eventKey].push(name);
+    btn.textContent = '✓';
+    feedback.textContent = `wonderful, ${name} — we'll see you there.`;
+    feedback.className = 'rsvp-feedback success';
+    renderAttendees(eventKey);
+  }
+
+  function renderAttendees(key) {
+    const list = localRSVPs[key];
+    if (!list.length) return;
+    document.getElementById('attendees-' + key).textContent =
+      'also coming: ' + list.join(', ');
+  }
+</script>
+
+</body>
+</html>

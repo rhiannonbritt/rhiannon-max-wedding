@@ -46,7 +46,7 @@
 
   .header-names {
     font-family: 'BilboBold', serif;
-    font-size: clamp(4.2rem, 14vw, 6.0rem);
+    font-size: clamp(5.0rem, 16vw, 7.5rem);
     font-weight: normal;
     color: #2a2a2a;
     margin-bottom: 14px;
@@ -54,7 +54,7 @@
 
   .event-title {
     font-family: 'BilboBold', serif;
-    font-size: clamp(3.4rem, 11vw, 4.6rem);
+    font-size: clamp(4.2rem, 13vw, 6.0rem);
     font-weight: normal;
     letter-spacing: 0.02em;
     color: #2a2a2a;
@@ -63,8 +63,8 @@
 
   .header-meta {
     font-family: 'KELTN', serif;
-    font-size: 2.1rem;
-    text-transform: lowercase;
+    font-size: 1.5rem;
+
     color: #555;
     line-height: 2;
     letter-spacing: 0.05em;
@@ -72,8 +72,8 @@
 
   .intro-text {
     font-family: 'KELTN', serif;
-    font-size: 2.0rem;
-    text-transform: lowercase;
+    font-size: 1.4rem;
+
     color: #555;
     line-height: 2.2;
     max-width: 800px;
@@ -124,8 +124,8 @@
 
   .event-day {
     font-family: 'KELTN', serif;
-    font-size: 2.0rem;
-    text-transform: lowercase;
+    font-size: 1.4rem;
+
     color: #888;
     margin-bottom: 12px;
     letter-spacing: 0.05em;
@@ -133,8 +133,8 @@
 
   .event-detail {
     font-family: 'KELTN', serif;
-    font-size: 2.0rem;
-    text-transform: lowercase;
+    font-size: 1.4rem;
+
     color: #777;
     line-height: 2.2;
     letter-spacing: 0.05em;
@@ -155,8 +155,8 @@
 
   .event-description {
     font-family: 'KELTN', serif;
-    font-size: 1.8rem;
-    text-transform: lowercase;
+    font-size: 1.2rem;
+
     color: #666;
     line-height: 2;
     letter-spacing: 0.03em;
@@ -176,8 +176,8 @@
 
   .rsvp-label {
     font-family: 'KELTN', serif;
-    font-size: 1.9rem;
-    text-transform: lowercase;
+    font-size: 1.3rem;
+
     color: #999;
     letter-spacing: 0.05em;
   }
@@ -197,11 +197,11 @@
     border: none;
     outline: none;
     font-family: 'KELTN', serif;
-    font-size: 2.0rem;
+    font-size: 1.4rem;
     background: #fff;
     color: #2a2a2a;
     min-width: 0;
-    text-transform: lowercase;
+
   }
 
   .rsvp-row input::placeholder { color: #bbb; }
@@ -212,8 +212,8 @@
     color: #fff;
     border: none;
     font-family: 'KELTN', serif;
-    font-size: 1.9rem;
-    text-transform: lowercase;
+    font-size: 1.3rem;
+
     letter-spacing: 0.08em;
     cursor: pointer;
     white-space: nowrap;
@@ -225,8 +225,8 @@
 
   .rsvp-feedback {
     font-family: 'KELTN', serif;
-    font-size: 1.9rem;
-    text-transform: lowercase;
+    font-size: 1.3rem;
+
     min-height: 1em;
     color: #555;
     letter-spacing: 0.05em;
@@ -235,21 +235,12 @@
   .rsvp-feedback.success { color: #4a7a4a; }
   .rsvp-feedback.error   { color: #9a3a3a; }
 
-  .attendees {
-    font-family: 'KELTN', serif;
-    font-size: 1.85rem;
-    text-transform: lowercase;
-    color: #aaa;
-    text-align: center;
-    line-height: 2;
-  }
-
   footer {
     text-align: center;
     padding: 0 20px 48px;
     font-family: 'KELTN', serif;
-    font-size: 1.85rem;
-    text-transform: lowercase;
+    font-size: 1.25rem;
+
     color: #ccc;
     letter-spacing: 0.1em;
   }
@@ -270,7 +261,7 @@
 
   <p class="intro-text">
     We can't wait to celebrate with you all in such a special place to us.
-    Below you'll find our weekend schedule — please let us know which events you'll be joining.
+    Below you'll find our weekend schedule — please type in your names to let us know which events you'll be joining.
   </p>
 </header>
 
@@ -301,11 +292,10 @@
     <div class="rsvp-area">
       <div class="rsvp-label">will you join us?</div>
       <div class="rsvp-row">
-        <input type="text" id="name-friday" placeholder="your name" autocomplete="name">
+        <input type="text" id="name-friday" placeholder="your names" autocomplete="name">
         <button onclick="rsvp('friday', 'Welcome Drinks', this)">rsvp</button>
       </div>
       <div class="rsvp-feedback" id="feedback-friday"></div>
-      <div class="attendees" id="attendees-friday"></div>
     </div>
   </div>
 
@@ -325,18 +315,17 @@
       10:30 AM start
     </div>
     <div class="event-description">
-      Join us for a morning hike up the Old Man of Coniston. The walk is about 6.5km with 600m in elevation, which will take about 5 hours at a relaxed pace. The trail is suitable for all ages and abilities if you're comfortable walking for that long.
+      Join us for a morning hike up the Old Man of Coniston. The walk is about 6.5km with 600m in elevation, which will take about 5 hours at a relaxed pace.
       <br><br>
       Bring a packed lunch.
     </div>
     <div class="rsvp-area">
       <div class="rsvp-label">will you join us?</div>
       <div class="rsvp-row">
-        <input type="text" id="name-saturday" placeholder="your name" autocomplete="name">
+        <input type="text" id="name-saturday" placeholder="your names" autocomplete="name">
         <button onclick="rsvp('saturday', 'Walk Up Old Man Coniston', this)">rsvp</button>
       </div>
       <div class="rsvp-feedback" id="feedback-saturday"></div>
-      <div class="attendees" id="attendees-saturday"></div>
     </div>
   </div>
 
@@ -383,11 +372,10 @@
     <div class="rsvp-area">
       <div class="rsvp-label">will you join us?</div>
       <div class="rsvp-row">
-        <input type="text" id="name-brunch" placeholder="your name" autocomplete="name">
+        <input type="text" id="name-brunch" placeholder="your names" autocomplete="name">
         <button onclick="rsvp('brunch', 'Morning After Brunch', this)">rsvp</button>
       </div>
       <div class="rsvp-feedback" id="feedback-brunch"></div>
-      <div class="attendees" id="attendees-brunch"></div>
     </div>
   </div>
 
@@ -412,11 +400,10 @@
     <div class="rsvp-area">
       <div class="rsvp-label">will you join us?</div>
       <div class="rsvp-row">
-        <input type="text" id="name-canoe" placeholder="your name" autocomplete="name">
+        <input type="text" id="name-canoe" placeholder="your names" autocomplete="name">
         <button onclick="rsvp('canoe', 'Canoe Adventure', this)">rsvp</button>
       </div>
       <div class="rsvp-feedback" id="feedback-canoe"></div>
-      <div class="attendees" id="attendees-canoe"></div>
     </div>
   </div>
 
@@ -441,11 +428,10 @@
     <div class="rsvp-area">
       <div class="rsvp-label">will you join us?</div>
       <div class="rsvp-row">
-        <input type="text" id="name-bonfire" placeholder="your name" autocomplete="name">
+        <input type="text" id="name-bonfire" placeholder="your names" autocomplete="name">
         <button onclick="rsvp('bonfire', 'Bonfire On The Lake', this)">rsvp</button>
       </div>
       <div class="rsvp-feedback" id="feedback-bonfire"></div>
-      <div class="attendees" id="attendees-bonfire"></div>
     </div>
   </div>
 
@@ -463,7 +449,7 @@
     const name = input.value.trim();
 
     if (!name) {
-      feedback.textContent = 'please enter your name.';
+      feedback.textContent = 'please enter your names.';
       feedback.className = 'rsvp-feedback error';
       return;
     }
@@ -492,17 +478,8 @@
     btn.textContent = '✓';
     feedback.textContent = `wonderful, ${name} — we'll see you there.`;
     feedback.className = 'rsvp-feedback success';
-    renderAttendees(eventKey);
-  }
-
-  function renderAttendees(key) {
-    const list = localRSVPs[key];
-    if (!list.length) return;
-    document.getElementById('attendees-' + key).textContent =
-      'also coming: ' + list.join(', ');
   }
 </script>
 
 </body>
-
 </html>
